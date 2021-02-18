@@ -1,0 +1,26 @@
+server:
+  port: 9001
+
+fengshui:
+  cloud:
+    api-key: bb19AeW4c990094YbaZNA3j10146Bf23355zEccd
+    url: https://fengshui-api.com/api/v1/{query}?token=${fengshui.cloud.api-key}
+  query:
+    sign: findChineseSignOfYear
+    compatibility:
+      sign: findSignCompatibility
+      love: findLoveCompatibility
+  translation:
+    signs:
+      Ox: 1
+      Tiger: 2
+      Rabbit: 3
+      Dragon: 4
+      Snake: 5
+      Horse: 6
+      Goat: 7
+      Monkey: 8
+      Rooster: 9
+      Dog: 10
+      Pig: 11
+      Rat: 12

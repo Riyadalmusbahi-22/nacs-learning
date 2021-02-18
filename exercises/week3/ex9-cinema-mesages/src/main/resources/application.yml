@@ -1,0 +1,16 @@
+template:
+  replacer: {name}
+  man: 
+    identifier: Mr.
+    message: Good day ${template.replacer}, don’t forget our 20% discount on tickets this Friday!
+  woman:
+    identifiers: Ms., Mrs.
+    message: Dear ${template.replacer}, you and your friends will have so much fun at the cinema this Friday with a 20% discount!
+  privileged:
+    identifier: Threepwood
+    message: My dearest ${template.replacer}, your lovely family gives you a 20% discount on tickets this Friday!
+  default:
+    message: Hello ${template.replacer}! How about a Friday night movie? This week with a 20% discount!
+    
+customer:
+  names: Ms. Sofia, Mrs. Isabela, Ms. Camila, Mrs. Valentina, Ms. Valeria, Mrs. Mariana, Mr. Santiago, Mr. Sebastian, Mr. Matias, Mr. Mateo, Mr. Alejandro, Mr. Diego, Daniela Threepwood, Ms. Gabriela Threepwood, Mrs. Martina Threepwood, Mr. Samuel Threepwood, Lucia, Sara, Emma, Agustin, Juan Pablo, Rodrigo

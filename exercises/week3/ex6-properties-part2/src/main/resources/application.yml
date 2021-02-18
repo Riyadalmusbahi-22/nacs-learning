@@ -1,0 +1,20 @@
+word: fantastic
+number: 369
+days-of-the-week: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
+library:
+  books:
+    Harry_Potter: 3
+    The_Foundation: 2
+    The_Lord_of_the_Rings: 4
+facilities:
+  sauna:
+    available-seats: 8
+    temperature: 80
+dancing-school:
+  ballerinas:
+    - name: Nadia
+      performance: 1
+    - name: Samara
+      performance: 2
+    - name: Sasha
+      performance: 3

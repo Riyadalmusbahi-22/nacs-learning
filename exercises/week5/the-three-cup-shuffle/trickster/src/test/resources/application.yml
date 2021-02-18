@@ -1,0 +1,10 @@
+cup:
+  server:
+    url: http://localhost
+    port:
+      placeholder: port
+    endpoint: ${cup.server.url}:{${cup.server.port.placeholder}}/coin
+    #    the end result after Spring Boot replaces those values is:
+    #    endpoint: http://localhost:{port}/coin
+    ports: 1, 2, 3
+  number-of-cups: 3

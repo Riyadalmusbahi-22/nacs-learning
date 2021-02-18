@@ -1,0 +1,6 @@
+todos:
+  server:
+    url: http://localhost:9000
+  endpoint:
+    todos: ${todos.server.url}/todos
+    done: ${todos.server.url}/todos/{id}/done

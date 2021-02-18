@@ -1,0 +1,42 @@
+version: "3"
+services:
+  cup1:
+    image: newaustriancodingschool/threecupshuffle-cup
+    environment:
+      - SERVER_PORT=9001
+    ports:
+      - "9001:9001"
+    networks:
+      - threecupshuffle
+  cup2:
+    image: newaustriancodingschool/threecupshuffle-cup
+    environment:
+      - SERVER_PORT=9002
+    ports:
+      - "9002:9002"
+    networks:
+      - threecupshuffle
+  cup3:
+    image: newaustriancodingschool/threecupshuffle-cup
+    environment:
+      - SERVER_PORT=9003
+    ports:
+      - "9003:9003"
+    networks:
+      - threecupshuffle
+  trickster:
+    image: newaustriancodingschool/threecupshuffle-trickster
+    environment:
+      - SERVER_PORT=9000
+#    ports:
+#      - "9002:9002"
+    networks:
+      - threecupshuffle
+  ui:
+    image: newaustriancodingschool/threecupshuffle-ui
+    ports:
+      - "9000:80"
+    networks:
+      - threecupshuffle
+networks:
+  threecupshuffle:

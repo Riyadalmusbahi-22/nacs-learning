@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>My Personal ToDo List</title>
+
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+    <link media="all" rel="stylesheet" th:href="@{/css/style.css}" type="text/css"/>
+</head>
+<body>
+
+<h1>My Personal ToDo List</h1>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Status</th>
+    </tr>
+    <tr th:each="toDo : ${toDos}">
+        <td th:text="${toDo.title}">Learn UI</td>
+        <td>
+            <th:block th:if="${toDo.done}">
+                Done
+            </th:block>
+            <th:block th:unless="${toDo.done}">
+                <form method="post" th:action="@{/done}">
+                    <input name="id" th:value="${toDo.id}" type="hidden"/>
+                    <button type="submit">Mark as done</button>
+                </form>
+            </th:block>
+        </td>
+    </tr>
+</table>
+
+<h3>New ToDo</h3>
+<form method="post" th:action="@{/}" th:object="${toDo}">
+    <label>Title</label><br/><br/>
+    <input th:field="*{title}" type="text"/><br/><br/>
+    <p th:errors="*{title}" th:if="${#fields.hasErrors('title')}">Incorrect input</p>
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>

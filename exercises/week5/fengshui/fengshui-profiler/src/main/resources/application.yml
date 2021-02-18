@@ -1,0 +1,12 @@
+server:
+  port: 9000
+
+fengshui:
+  api:
+    url: http://localhost:9001
+    endpoints:
+      sign: ${fengshui.api.url}/sign
+      compatibility:
+        sign: ${fengshui.api.url}/compatibility/sign
+        love: ${fengshui.api.url}/compatibility/love
+      

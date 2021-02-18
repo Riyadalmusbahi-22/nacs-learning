@@ -1,0 +1,8 @@
+dataset:
+  contacts:
+    - name: El
+      address:
+        name: Test address
+    - name: Niklas
+      address:
+        name: Fake address

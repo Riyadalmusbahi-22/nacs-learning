@@ -1,0 +1,40 @@
+# create the MongoDB network so both containers can interact with each other
+
+docker network create mongo-network
+
+# run the MongoDB Docker container for the first time
+
+# -- Example 1
+
+docker run -d -p 27017:27017 --restart always --name mongo \
+    -e MONGO_INITDB_ROOT_USERNAME=mongoadmin \
+    -e MONGO_INITDB_ROOT_PASSWORD=secret \
+    mongo
+    
+# -- Example 2
+
+docker run -d -p 27017:27017 --restart always --name mongo \
+    -e MONGO_INITDB_ROOT_USERNAME=$NACS_MONGODB_USERNAME \
+    -e MONGO_INITDB_ROOT_PASSWORD=$NACS_MONGODB_PASSWORD \
+    mongo
+    
+# run the Mongo Express client interface container for the first time
+
+# -- Example 1
+
+docker run -d -p 8081:8081 --restart always --name mongo-express \
+    -e ME_CONFIG_MONGODB_ADMINUSERNAME=mongoadmin \
+    -e ME_CONFIG_MONGODB_ADMINPASSWORD=secret \
+    mongo-express
+
+# -- Example 2
+
+docker run -d -p 8081:8081 --link mongo:mongo --restart always --name mongo-express \
+    -e ME_CONFIG_MONGODB_ADMINUSERNAME=$NACS_MONGODB_USERNAME \
+    -e ME_CONFIG_MONGODB_ADMINPASSWORD=$NACS_MONGODB_PASSWORD \
+    mongo-express
+    
+---- 
+
+docker run -d -p 27017:27017 --name mongo mongo
+docker run -d -p 8081:8081 --link mongo:mongo --name mongo-express mongo-express

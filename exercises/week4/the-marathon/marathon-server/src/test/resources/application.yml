@@ -1,0 +1,10 @@
+test:
+  runners:
+    - name: Mike
+      time: PT175M
+    - name: John
+      time: PT173M
+    - name: Larry
+      time: PT185M
+    - name: Linda
+      time: PT160M

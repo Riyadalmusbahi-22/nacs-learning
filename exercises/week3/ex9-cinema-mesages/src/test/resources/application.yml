@@ -1,0 +1,16 @@
+template:
+  replacer: "{name}"
+  man:
+    identifier: Mr.
+    message: Hi man ${template.replacer}
+  woman:
+    identifiers: Ms., Mrs.
+    message: Hi woman ${template.replacer}
+  privileged:
+    identifier: Testson
+    message: Hi privileged ${template.replacer}
+  default:
+    message: Hi default ${template.replacer}
+
+customer:
+  names: Pete, Paul, Laura
